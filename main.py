@@ -29,7 +29,6 @@ def save_to_excel(items):
     
     sheet = workbook.active
     bias = 2
-    
     for i in range(0,len(items)):
         sheet[f"A{i+bias}"] = items[i][0]
         sheet[f"B{i+bias}"] = items[i][1]
