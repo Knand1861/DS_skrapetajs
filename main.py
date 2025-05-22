@@ -1,7 +1,6 @@
 import requests
 import time
 from bs4 import BeautifulSoup
-import os
 import re
 from openpyxl import load_workbook, Workbook
 ITEM = "RTX 3060"
@@ -20,10 +19,7 @@ def main():
 def save_to_excel(items):
     file_path:str = "data.xlsx"
 
-    if os.path.exists(file_path):
-        workbook = load_workbook(file_path)
-    else:
-        workbook = Workbook()
+    workbook = Workbook()
     # Delete old sheets
     for i in workbook.sheetnames:
         workbook.remove(workbook[i])
