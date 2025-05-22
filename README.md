@@ -7,13 +7,13 @@ Programma pati nolasa datus no interneta un ievieto tos Excel failā, augošā s
 
 ## Izmantotās bibliotēkas
 
-- `import requests`  
+`import requests`  
   Ļauj pieprasīt mājaslapai HTML failu, no kura ar `from bs4 import BeautifulSoup` var izņemt vajadzīgos datus, iepriekš zinot, kā mājaslapa ir izveidota.
-- `import os`  
+`import os`  
   Ļauj pārbaudīt, vai Excel fails jau pastāv.
-- `import re`  
+`import re`  
   Ļauj noņemt nevajadzīgo informāciju, atstājot tikai cenu.
-- `from openpyxl import load_workbook, Workbook`  
+`from openpyxl import load_workbook, Workbook`  
   Palīdz strādāt ar Excel failu.
 
 ---
