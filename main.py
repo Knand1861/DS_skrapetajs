@@ -89,7 +89,7 @@ def fetch_shop(shop:str):
             soup:str = BeautifulSoup(html, "html.parser")
             itemContainers = soup.find_all("li", class_="product")
             for i in itemContainers:
-                price = float(re.sub(r"[:a-zA-Z\s]+","",i.find("p", class_="price").get_text().replace("€", "").replace(",", ".").strip()))
+                price = float(re.sub(r"[:a-z€A-Z\s]+","",i.find("p", class_="price").get_text().replace(",", ".").strip()))
                 name = i.find("div", class_="product__info__part").find("a").get_text()
                 name = " ".join(name.split())
                 items.add(name,price,"RD Electronics")
@@ -101,7 +101,7 @@ def fetch_shop(shop:str):
             itemContainers = soup.find_all("article", class_="product-card")
             for i in itemContainers:
                 price = i.find("div", class_="price").get_text().split("€")[0]
-                price = float(re.sub(r"[:a-zA-Z\s]+","",price.replace("€", "").replace(",", ".").strip()))
+                price = float(re.sub(r"[:a-z€A-Z\s]+","",price.replace(",", ".").strip()))
                 name = i.find("a", class_="product_name").get_text()
                 name = " ".join(name.split())
                 items.add(name,price,"Euronics")
